@@ -389,12 +389,21 @@ const Index = () => {
                       ))}
                     </div>
 
-                    <BookingForm tourTitle={tour.title}>
-                      <Button className="w-full bg-primary hover:bg-primary/90">
-                        Book This Tour
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                    <div className="grid grid-cols-2 gap-3">
+                      <Button
+                        variant="outline"
+                        className="bg-gray-50 hover:bg-gray-100 border-gray-300"
+                        asChild
+                      >
+                        <Link to={`/tour/${tour.id}`}>Check Info</Link>
                       </Button>
-                    </BookingForm>
+
+                      <BookingForm tourTitle={tour.title}>
+                        <Button className="bg-primary hover:bg-primary/90">
+                          Book Now
+                        </Button>
+                      </BookingForm>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
