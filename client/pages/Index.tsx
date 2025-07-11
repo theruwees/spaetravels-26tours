@@ -155,7 +155,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-            {/* Hero Section with 3D Scene */}
+      {/* Hero Section with 3D Scene */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <Hero3D variant="travel">
           <div className="absolute inset-0 z-0">
@@ -163,53 +163,58 @@ const Index = () => {
           </div>
 
           <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg"
-          >
-            Discover the Pearl of the Indian Ocean
-          </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg"
+            >
+              Discover the Pearl of the Indian Ocean
+            </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="text-lg md:text-xl mb-8 drop-shadow-md max-w-2xl mx-auto"
-          >
-            Experience Sri Lanka's breathtaking landscapes, rich culture, and
-            unforgettable adventures with our expert-guided tours
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="text-lg md:text-xl mb-8 drop-shadow-md max-w-2xl mx-auto"
+            >
+              Experience Sri Lanka's breathtaking landscapes, rich culture, and
+              unforgettable adventures with our expert-guided tours
+            </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <BookingForm>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            >
+              <BookingForm>
+                <Button
+                  size="lg"
+                  className="min-w-48 bg-white text-primary hover:bg-gray-100"
+                >
+                  Book Your Adventure
+                </Button>
+              </BookingForm>
+
               <Button
                 size="lg"
-                className="min-w-48 bg-white text-primary hover:bg-gray-100"
+                variant="outline"
+                asChild
+                className="min-w-48 bg-white/20 border-white/30 text-white hover:bg-white/30"
               >
-                Book Your Adventure
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="mr-2 h-4 w-4" />
+                  WhatsApp Us
+                </a>
               </Button>
-            </BookingForm>
-
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="min-w-48 bg-white/20 border-white/30 text-white hover:bg-white/30"
-            >
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 h-4 w-4" />
-                WhatsApp Us
-              </a>
-            </Button>
-          </motion.div>
-        </div>
+            </motion.div>
+          </div>
+        </Hero3D>
       </section>
 
       {/* Tour Categories */}
