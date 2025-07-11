@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MessageCircle, Plane } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import BookingForm from "@/components/BookingForm";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -81,9 +82,11 @@ const Navigation = () => {
               <Phone className="h-4 w-4" />
               <span>Call</span>
             </a>
-            <Button asChild size="lg" className="px-6">
-              <Link to="/book">Book Now</Link>
-            </Button>
+            <BookingForm>
+              <Button size="lg" className="px-6">
+                Book Now
+              </Button>
+            </BookingForm>
           </div>
 
           {/* Mobile menu button */}
@@ -146,11 +149,11 @@ const Navigation = () => {
                   <span>Call</span>
                 </a>
               </div>
-              <Button asChild className="w-full">
-                <Link to="/book" onClick={() => setIsOpen(false)}>
+              <BookingForm>
+                <Button className="w-full" onClick={() => setIsOpen(false)}>
                   Book Now
-                </Link>
-              </Button>
+                </Button>
+              </BookingForm>
             </div>
           </motion.div>
         )}
