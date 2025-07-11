@@ -469,21 +469,17 @@ const Index = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              <BookingForm>
+                <Button size="lg" className="min-w-48">
                   <MessageCircle className="mr-2 h-4 w-4" />
-                  WhatsApp: {whatsappNumber}
-                </a>
-              </Button>
+                  Book via WhatsApp
+                </Button>
+              </BookingForm>
 
               <Button size="lg" variant="outline" asChild>
                 <a href={`tel:${whatsappNumber}`}>
                   <Phone className="mr-2 h-4 w-4" />
-                  Call Now
+                  Call: {whatsappNumber}
                 </a>
               </Button>
             </div>
