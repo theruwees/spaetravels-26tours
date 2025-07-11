@@ -20,6 +20,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Scene3D from "@/components/Scene3D";
+import BookingForm from "@/components/BookingForm";
 
 const Index = () => {
   const whatsappNumber = "+94705220449";
@@ -184,9 +185,14 @@ const Index = () => {
             transition={{ duration: 1, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Button size="lg" asChild className="min-w-48">
-              <Link to="/tours">Explore Tours</Link>
-            </Button>
+            <BookingForm>
+              <Button
+                size="lg"
+                className="min-w-48 bg-white text-primary hover:bg-gray-100"
+              >
+                Book Your Adventure
+              </Button>
+            </BookingForm>
 
             <Button
               size="lg"
