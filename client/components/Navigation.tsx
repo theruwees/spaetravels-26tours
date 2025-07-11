@@ -32,22 +32,22 @@ const Navigation = () => {
               <Plane className="h-8 w-8 text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl font-bold text-gray-900 leading-tight">
+              <span className="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">
                 Space Travels & Tours
               </span>
-              <span className="text-sm text-primary font-medium">
+              <span className="text-xs sm:text-sm text-primary font-medium">
                 Explore Beautiful Sri Lanka
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden sm:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`relative text-base font-semibold transition-all duration-300 hover:text-primary py-2 px-3 rounded-lg hover:bg-primary/5 ${
+                className={`relative text-sm lg:text-base font-semibold transition-all duration-300 hover:text-primary py-2 px-2 lg:px-3 rounded-lg hover:bg-primary/5 ${
                   location.pathname === item.path
                     ? "text-primary bg-primary/10"
                     : "text-gray-700"
@@ -65,7 +65,7 @@ const Navigation = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden sm:flex items-center space-x-2 lg:space-x-4">
             <a
               href={whatsappLink}
               target="_blank"
@@ -90,7 +90,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="sm:hidden">
             <Button
               variant="ghost"
               size="sm"
@@ -114,7 +114,7 @@ const Navigation = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-200 shadow-lg"
+            className="sm:hidden bg-white border-t border-gray-200 shadow-lg"
           >
             <div className="px-4 py-2 space-y-1">
               {navItems.map((item) => (
