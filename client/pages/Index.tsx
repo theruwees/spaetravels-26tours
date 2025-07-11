@@ -339,6 +339,60 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Customer Testimonials */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold mb-4">What Our Customers Say</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Real experiences from travelers who explored Sri Lanka with us
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+              >
+                <Card className="p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex items-center mb-4">
+                    <div className="flex text-yellow-400">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-current" />
+                      ))}
+                    </div>
+                  </div>
+
+                  <p className="text-gray-700 mb-4 italic">
+                    "{testimonial.comment}"
+                  </p>
+
+                  <div className="border-t pt-4">
+                    <p className="font-semibold text-gray-900">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      {testimonial.location}
+                    </p>
+                    <p className="text-sm text-primary font-medium">
+                      {testimonial.tour}
+                    </p>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-16 bg-primary text-white">
         <div className="max-w-6xl mx-auto px-4">
