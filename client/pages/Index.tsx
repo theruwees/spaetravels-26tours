@@ -155,14 +155,68 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section with 3D Scene */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <Hero3D variant="travel">
-          <div className="absolute inset-0 z-0">
-            <Scene3D />
+            {/* Hero Section with 3D Scene */}
+      <section className="relative min-h-screen lg:h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-blue-600 to-teal-500">
+        {/* Enhanced 3D Background */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent z-10"></div>
+
+          {/* Floating Travel Elements */}
+          <div className="absolute inset-0">
+            {/* Airplane Path */}
+            <motion.div
+              className="absolute top-1/4 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+              animate={{
+                x: [-100, typeof window !== 'undefined' ? window.innerWidth + 100 : 1000],
+              }}
+              transition={{
+                duration: 15,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+
+            {/* Travel Icons */}
+            <motion.div
+              className="absolute top-1/3 right-1/4 text-white/20"
+              animate={{
+                y: [0, -20, 0],
+                rotate: [0, 10, 0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+              </svg>
+            </motion.div>
+
+            <motion.div
+              className="absolute bottom-1/3 left-1/4 text-white/20"
+              animate={{
+                y: [0, -15, 0],
+                rotate: [0, -10, 0],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2,
+              }}
+            >
+              <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+            </motion.div>
           </div>
 
-          <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
+          <Scene3D />
+        </div>
+
+        <div className="relative z-20 text-center text-white px-4 max-w-6xl mx-auto py-20">
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -189,7 +243,7 @@ const Index = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <BookingForm>
-                <Button
+                                <Button
                   size="lg"
                   className="min-w-60 h-14 text-lg bg-white text-primary hover:bg-gray-100 shadow-2xl"
                 >
@@ -197,7 +251,7 @@ const Index = () => {
                 </Button>
               </BookingForm>
 
-              <Button
+                            <Button
                 size="lg"
                 variant="outline"
                 asChild
