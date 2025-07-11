@@ -155,8 +155,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section with 3D Scene */}
-            <section className="relative h-screen flex items-center justify-center overflow-hidden">
+            {/* Hero Section with 3D Scene */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <Hero3D variant="travel">
           <div className="absolute inset-0 z-0">
             <Scene3D />
