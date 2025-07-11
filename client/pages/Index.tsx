@@ -319,15 +319,12 @@ const Index = () => {
                       ))}
                     </div>
 
-                    <Button
-                      className="w-full bg-primary hover:bg-primary/90"
-                      asChild
-                    >
-                      <Link to={`/tour/${tour.id}`}>
-                        Explore Tour
+                    <BookingForm tourTitle={tour.title}>
+                      <Button className="w-full bg-primary hover:bg-primary/90">
+                        Book This Tour
                         <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
+                      </Button>
+                    </BookingForm>
                   </CardContent>
                 </Card>
               </motion.div>
