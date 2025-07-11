@@ -252,11 +252,6 @@ const Tours = () => {
                   ))}
                 </SelectContent>
               </Select>
-
-              <Button variant="outline">
-                <Filter className="mr-2 h-4 w-4" />
-                More Filters
-              </Button>
             </div>
           </div>
         </div>
