@@ -10,6 +10,9 @@ import Layout from "@/components/Layout";
 import PlaceholderPage from "@/components/PlaceholderPage";
 import Index from "./pages/Index";
 import Tours from "./pages/Tours";
+import About from "./pages/About";
+import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,15 +28,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
 
             {/* Main Pages */}
-            <Route
-              path="/about"
-              element={
-                <PlaceholderPage
-                  title="About Us"
-                  description="Learn about our company and mission to provide exceptional travel experiences in Sri Lanka."
-                />
-              }
-            />
+            <Route path="/about" element={<About />} />
             <Route
               path="/story"
               element={
@@ -178,26 +173,10 @@ const App = () => (
                 />
               }
             />
-            <Route
-              path="/gallery"
-              element={
-                <PlaceholderPage
-                  title="Photo Gallery"
-                  description="Browse stunning photos from our tours and destinations."
-                />
-              }
-            />
+            <Route path="/gallery" element={<Gallery />} />
 
             {/* Company Info */}
-            <Route
-              path="/contact"
-              element={
-                <PlaceholderPage
-                  title="Contact Us"
-                  description="Get in touch with our travel experts to plan your Sri Lankan adventure."
-                />
-              }
-            />
+            <Route path="/contact" element={<Contact />} />
             <Route
               path="/agents"
               element={
