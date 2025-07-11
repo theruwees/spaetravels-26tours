@@ -191,7 +191,7 @@ const Index = () => {
               <BookingForm>
                 <Button
                   size="lg"
-                  className="min-w-48 bg-white text-primary hover:bg-gray-100"
+                  className="min-w-60 h-14 text-lg bg-white text-primary hover:bg-gray-100 shadow-2xl"
                 >
                   Book Your Adventure
                 </Button>
@@ -201,7 +201,7 @@ const Index = () => {
                 size="lg"
                 variant="outline"
                 asChild
-                className="min-w-48 bg-white/20 border-white/30 text-white hover:bg-white/30"
+                className="min-w-60 h-14 text-lg bg-white/20 border-white/30 text-white hover:bg-white/30 shadow-xl"
               >
                 <a
                   href={whatsappLink}
