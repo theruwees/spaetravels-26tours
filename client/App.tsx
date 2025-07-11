@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "@/components/Layout";
 import PlaceholderPage from "@/components/PlaceholderPage";
 import Index from "./pages/Index";
+import Tours from "./pages/Tours";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,15 +45,7 @@ const App = () => (
             />
 
             {/* Tours */}
-            <Route
-              path="/tours"
-              element={
-                <PlaceholderPage
-                  title="All Tours"
-                  description="Browse our complete collection of Sri Lankan tour packages and experiences."
-                />
-              }
-            />
+            <Route path="/tours" element={<Tours />} />
             <Route
               path="/tours/nature"
               element={
