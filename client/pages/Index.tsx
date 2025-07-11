@@ -155,7 +155,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-            {/* Hero Section with 3D Scene */}
+      {/* Hero Section with 3D Scene */}
       <section className="relative min-h-screen lg:h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-blue-600 to-teal-500">
         {/* Enhanced 3D Background */}
         <div className="absolute inset-0 z-0">
@@ -167,7 +167,12 @@ const Index = () => {
             <motion.div
               className="absolute top-1/4 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent"
               animate={{
-                x: [-100, typeof window !== 'undefined' ? window.innerWidth + 100 : 1000],
+                x: [
+                  -100,
+                  typeof window !== "undefined"
+                    ? window.innerWidth + 100
+                    : 1000,
+                ],
               }}
               transition={{
                 duration: 15,
@@ -189,8 +194,12 @@ const Index = () => {
                 ease: "easeInOut",
               }}
             >
-              <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+              <svg
+                className="w-16 h-16"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
               </svg>
             </motion.div>
 
@@ -207,8 +216,12 @@ const Index = () => {
                 delay: 2,
               }}
             >
-              <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              <svg
+                className="w-12 h-12"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
               </svg>
             </motion.div>
           </div>
@@ -217,58 +230,53 @@ const Index = () => {
         </div>
 
         <div className="relative z-20 text-center text-white px-4 max-w-6xl mx-auto py-20">
-            <motion.h1
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg"
-            >
-              Discover the Pearl of the Indian Ocean
-            </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg"
+          >
+            Discover the Pearl of the Indian Ocean
+          </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="text-lg md:text-xl mb-8 drop-shadow-md max-w-2xl mx-auto"
-            >
-              Experience Sri Lanka's breathtaking landscapes, rich culture, and
-              unforgettable adventures with our expert-guided tours
-            </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="text-lg md:text-xl mb-8 drop-shadow-md max-w-2xl mx-auto"
+          >
+            Experience Sri Lanka's breathtaking landscapes, rich culture, and
+            unforgettable adventures with our expert-guided tours
+          </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            >
-              <BookingForm>
-                                <Button
-                  size="lg"
-                  className="min-w-60 h-14 text-lg bg-white text-primary hover:bg-gray-100 shadow-2xl"
-                >
-                  Book Your Adventure
-                </Button>
-              </BookingForm>
-
-                            <Button
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <BookingForm>
+              <Button
                 size="lg"
-                variant="outline"
-                asChild
-                className="min-w-60 h-14 text-lg bg-white/20 border-white/30 text-white hover:bg-white/30 shadow-xl"
+                className="min-w-60 h-14 text-lg bg-white text-primary hover:bg-gray-100 shadow-2xl"
               >
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle className="mr-2 h-4 w-4" />
-                  WhatsApp Us
-                </a>
+                Book Your Adventure
               </Button>
-            </motion.div>
-          </div>
-        </Hero3D>
+            </BookingForm>
+
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="min-w-60 h-14 text-lg bg-white/20 border-white/30 text-white hover:bg-white/30 shadow-xl"
+            >
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="mr-2 h-4 w-4" />
+                WhatsApp Us
+              </a>
+            </Button>
+          </motion.div>
+        </div>
       </section>
 
       {/* Tour Categories */}
