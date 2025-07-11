@@ -21,6 +21,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Scene3D from "@/components/Scene3D";
 import BookingForm from "@/components/BookingForm";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const Index = () => {
   const whatsappNumber = "+94705220449";
@@ -210,7 +211,7 @@ const Index = () => {
       </section>
 
       {/* Tour Categories */}
-      <section className="py-16 bg-gray-50">
+      <AnimatedBackground variant="dots" className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -250,7 +251,7 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Featured Tours */}
       <section className="py-16 bg-white">
@@ -343,7 +344,7 @@ const Index = () => {
       </section>
 
       {/* Customer Testimonials */}
-      <section className="py-16 bg-gray-50">
+      <AnimatedBackground variant="particles" className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -394,7 +395,7 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Why Choose Us */}
       <section className="py-16 bg-primary text-white">
