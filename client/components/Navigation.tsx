@@ -42,7 +42,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -65,22 +65,22 @@ const Navigation = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4">
             <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors font-medium"
+              className="p-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors"
+              title="WhatsApp"
             >
-              <MessageCircle className="h-4 w-4" />
-              <span>WhatsApp</span>
+              <MessageCircle className="h-5 w-5" />
             </a>
             <a
               href={`tel:${whatsappNumber}`}
-              className="flex items-center space-x-2 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors font-medium"
+              className="p-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
+              title="Call"
             >
-              <Phone className="h-4 w-4" />
-              <span>Call</span>
+              <Phone className="h-5 w-5" />
             </a>
             <BookingForm>
               <Button size="lg" className="px-6">
@@ -90,7 +90,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="md:hidden">
             <Button
               variant="ghost"
               size="sm"
@@ -114,7 +114,7 @@ const Navigation = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-200 shadow-lg"
+            className="md:hidden bg-white border-t border-gray-200 shadow-lg"
           >
             <div className="px-4 py-2 space-y-1">
               {navItems.map((item) => (
