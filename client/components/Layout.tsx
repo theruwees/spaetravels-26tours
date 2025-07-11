@@ -204,6 +204,17 @@ const Layout = ({ children }: LayoutProps) => {
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
             <p>&copy; 2024 Space Travels & Tours. All rights reserved.</p>
+            <p className="mt-2 text-sm">
+              Built with ❤️ by{" "}
+              <a
+                href="https://ruvex.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 transition-colors font-medium"
+              >
+                Ruwees
+              </a>
+            </p>
           </div>
         </div>
       </footer>
