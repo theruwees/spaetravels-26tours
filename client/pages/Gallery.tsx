@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Download, Heart, MapPin, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<any>(null);
@@ -125,7 +126,10 @@ const Gallery = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-blue-600 text-white py-20">
+      <AnimatedBackground
+        variant="waves"
+        className="bg-gradient-to-r from-primary to-blue-600 text-white py-20"
+      >
         <div className="max-w-6xl mx-auto px-4 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -153,7 +157,7 @@ const Gallery = () => {
             <span>Over 500+ High-Quality Photos</span>
           </motion.div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Category Filter */}
       <section className="py-8 bg-white shadow-sm">
@@ -174,7 +178,7 @@ const Gallery = () => {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-12">
+      <AnimatedBackground variant="dots" className="py-12">
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-8">
             <p className="text-gray-600 text-center">
@@ -220,7 +224,7 @@ const Gallery = () => {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Lightbox Modal */}
       <AnimatePresence>
@@ -287,7 +291,10 @@ const Gallery = () => {
       </AnimatePresence>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary text-white">
+      <AnimatedBackground
+        variant="particles"
+        className="py-16 bg-primary text-white"
+      >
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -308,7 +315,7 @@ const Gallery = () => {
             </Button>
           </motion.div>
         </div>
-      </section>
+      </AnimatedBackground>
     </div>
   );
 };
