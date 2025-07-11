@@ -22,28 +22,33 @@ const Navigation = () => {
   const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\+/g, "")}`;
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+    <nav className="fixed top-0 w-full z-50 bg-white shadow-lg border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="bg-primary p-2 rounded-lg">
-              <Plane className="h-6 w-6 text-white" />
+          <Link to="/" className="flex items-center space-x-3">
+            <div className="bg-gradient-to-r from-primary to-blue-600 p-3 rounded-xl shadow-md">
+              <Plane className="h-8 w-8 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900">
-              Space Travels & Tours
-            </span>
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold text-gray-900 leading-tight">
+                Space Travels & Tours
+              </span>
+              <span className="text-sm text-primary font-medium">
+                Explore Beautiful Sri Lanka
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`relative text-sm font-medium transition-colors hover:text-primary ${
+                className={`relative text-base font-semibold transition-all duration-300 hover:text-primary py-2 px-3 rounded-lg hover:bg-primary/5 ${
                   location.pathname === item.path
-                    ? "text-primary"
+                    ? "text-primary bg-primary/10"
                     : "text-gray-700"
                 }`}
               >
@@ -51,7 +56,7 @@ const Navigation = () => {
                 {location.pathname === item.path && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                    className="absolute -bottom-1 left-3 right-3 h-1 bg-primary rounded-full"
                   />
                 )}
               </Link>
@@ -59,37 +64,40 @@ const Navigation = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden lg:flex items-center space-x-4">
             <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-green-600 hover:text-green-700 transition-colors"
+              className="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors font-medium"
             >
-              <MessageCircle className="h-5 w-5" />
+              <MessageCircle className="h-4 w-4" />
+              <span>WhatsApp</span>
             </a>
             <a
               href={`tel:${whatsappNumber}`}
-              className="text-gray-600 hover:text-gray-700 transition-colors"
+              className="flex items-center space-x-2 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors font-medium"
             >
-              <Phone className="h-5 w-5" />
+              <Phone className="h-4 w-4" />
+              <span>Call</span>
             </a>
-            <Button asChild>
+            <Button asChild size="lg" className="px-6">
               <Link to="/book">Book Now</Link>
             </Button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
+              className="p-2"
             >
               {isOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-7 w-7" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-7 w-7" />
               )}
             </Button>
           </div>
@@ -103,7 +111,7 @@ const Navigation = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-200"
+            className="lg:hidden bg-white border-t border-gray-200 shadow-lg"
           >
             <div className="px-4 py-2 space-y-1">
               {navItems.map((item) => (
