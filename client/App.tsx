@@ -15,6 +15,7 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Destinations from "./pages/Destinations";
 import Blog from "./pages/Blog";
+import TourDetail from "./pages/TourDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
