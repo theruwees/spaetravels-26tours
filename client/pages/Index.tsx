@@ -22,6 +22,7 @@ import { Badge } from "@/components/ui/badge";
 import Scene3D from "@/components/Scene3D";
 import BookingForm from "@/components/BookingForm";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import Hero3D from "@/components/Hero3D";
 
 const Index = () => {
   const whatsappNumber = "+94705220449";
