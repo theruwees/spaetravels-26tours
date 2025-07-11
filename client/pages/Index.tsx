@@ -234,7 +234,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 drop-shadow-2xl"
           >
             Discover the Pearl of the Indian Ocean
           </motion.h1>
