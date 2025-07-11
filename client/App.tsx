@@ -13,6 +13,8 @@ import Tours from "./pages/Tours";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import Destinations from "./pages/Destinations";
+import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -135,26 +137,10 @@ const App = () => (
                 />
               }
             />
-            <Route
-              path="/destinations"
-              element={
-                <PlaceholderPage
-                  title="Destinations"
-                  description="Discover amazing destinations across Sri Lanka."
-                />
-              }
-            />
+            <Route path="/destinations" element={<Destinations />} />
 
             {/* Content Pages */}
-            <Route
-              path="/blog"
-              element={
-                <PlaceholderPage
-                  title="Travel Blog"
-                  description="Read travel tips, destination guides, and Sri Lankan tourism insights."
-                />
-              }
-            />
+            <Route path="/blog" element={<Blog />} />
             <Route
               path="/testimonials"
               element={
