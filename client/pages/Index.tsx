@@ -35,33 +35,118 @@ const Index = () => {
   const featuredTours = [
     {
       id: 1,
-      title: "Sigiriya & Dambulla Cultural Tour",
-      image: "/placeholder.svg",
-      price: "LKR 15,000",
-      rating: 4.8,
-      reviews: 234,
-      duration: "2 Days",
+      title: "Sigiriya Rock Fortress & Ancient Cities",
+      image:
+        "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
+      description:
+        "Explore the ancient rock fortress of Sigiriya and discover Sri Lanka's rich cultural heritage with UNESCO World Heritage sites.",
+      rating: 4.9,
+      reviews: 324,
       category: "Cultural",
+      highlights: [
+        "UNESCO World Heritage Site",
+        "Ancient Frescoes",
+        "Royal Gardens",
+      ],
     },
     {
       id: 2,
-      title: "Mirissa Whale Watching & Beach",
-      image: "/placeholder.svg",
-      price: "LKR 8,500",
-      rating: 4.9,
-      reviews: 187,
-      duration: "1 Day",
+      title: "Mirissa Blue Whale Watching Adventure",
+      image:
+        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop",
+      description:
+        "Experience the magnificent blue whales in their natural habitat off the southern coast of Sri Lanka.",
+      rating: 4.8,
+      reviews: 287,
       category: "Beach",
+      highlights: [
+        "Blue Whale Spotting",
+        "Dolphin Encounters",
+        "Scenic Boat Ride",
+      ],
     },
     {
       id: 3,
-      title: "Kandy Hill Country Explorer",
-      image: "/placeholder.svg",
-      price: "LKR 12,000",
+      title: "Kandy & Ella Hill Country Journey",
+      image:
+        "https://images.unsplash.com/photo-1571122606740-b25a5fd5c4e3?w=800&h=600&fit=crop",
+      description:
+        "Journey through Sri Lanka's breathtaking hill country, visiting tea plantations and scenic mountain railways.",
       rating: 4.7,
-      reviews: 156,
-      duration: "3 Days",
+      reviews: 198,
       category: "Nature",
+      highlights: [
+        "Temple of the Tooth",
+        "Tea Factory Visits",
+        "Nine Arch Bridge",
+      ],
+    },
+    {
+      id: 4,
+      title: "Galle Fort & Southern Coast Exploration",
+      image:
+        "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&h=600&fit=crop",
+      description:
+        "Discover the historic Dutch colonial architecture of Galle Fort and pristine southern beaches.",
+      rating: 4.6,
+      reviews: 156,
+      category: "Cultural",
+      highlights: [
+        "Dutch Colonial Fort",
+        "Historic Lighthouse",
+        "Stilt Fishermen",
+      ],
+    },
+    {
+      id: 5,
+      title: "Yala National Park Safari Experience",
+      image:
+        "https://images.unsplash.com/photo-1549366021-9f761d040a94?w=800&h=600&fit=crop",
+      description:
+        "Embark on an exciting safari adventure to spot leopards, elephants, and diverse wildlife in Yala National Park.",
+      rating: 4.8,
+      reviews: 245,
+      category: "Adventure",
+      highlights: ["Leopard Spotting", "Elephant Herds", "Bird Watching"],
+    },
+    {
+      id: 6,
+      title: "Adam's Peak Sacred Mountain Climb",
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop",
+      description:
+        "Experience the spiritual journey to the sacred summit of Adam's Peak and witness a breathtaking sunrise.",
+      rating: 4.9,
+      reviews: 178,
+      category: "Adventure",
+      highlights: ["Sacred Peak", "Sunrise Views", "Pilgrimage Trail"],
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "Priya Jayawardena",
+      location: "Colombo",
+      rating: 5,
+      comment:
+        "Amazing experience! The guides were so knowledgeable about Sri Lankan history and culture. Highly recommend Space Travels!",
+      tour: "Cultural Triangle Tour",
+    },
+    {
+      name: "Rohan Silva",
+      location: "Kandy",
+      rating: 5,
+      comment:
+        "Perfect family trip! My kids loved the wildlife safari and the beaches. Professional service from start to finish.",
+      tour: "Family Adventure Package",
+    },
+    {
+      name: "Sanduni Perera",
+      location: "Galle",
+      rating: 5,
+      comment:
+        "Best whale watching experience ever! Saw multiple blue whales and dolphins. The boat crew was excellent.",
+      tour: "Mirissa Whale Watching",
     },
   ];
 
@@ -114,43 +199,6 @@ const Index = () => {
                 WhatsApp Us
               </a>
             </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Quick Search Section */}
-      <section className="py-12 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="bg-gray-50 rounded-2xl p-8"
-          >
-            <h2 className="text-2xl font-bold text-center mb-6">
-              Find Your Perfect Tour
-            </h2>
-
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="flex-1">
-                <Input
-                  placeholder="Search destinations, activities..."
-                  className="h-12"
-                />
-              </div>
-
-              <div className="flex gap-2">
-                <Button variant="outline" size="lg">
-                  <Filter className="mr-2 h-4 w-4" />
-                  Filters
-                </Button>
-
-                <Button size="lg">
-                  <Search className="mr-2 h-4 w-4" />
-                  Search
-                </Button>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -221,44 +269,56 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                  <div className="aspect-video bg-gray-200 relative">
+                <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                  <div className="aspect-[4/3] bg-gray-200 relative overflow-hidden">
                     <img
                       src={tour.image}
                       alt={tour.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                     />
-                    <Badge className="absolute top-4 right-4">
+                    <Badge className="absolute top-4 right-4 bg-white/90 text-gray-800">
                       {tour.category}
                     </Badge>
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                      <div className="flex items-center text-white">
+                        <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                        <span className="ml-1 text-sm font-medium">
+                          {tour.rating}
+                        </span>
+                        <span className="ml-2 text-sm opacity-90">
+                          ({tour.reviews} reviews)
+                        </span>
+                      </div>
+                    </div>
                   </div>
 
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-lg mb-2">{tour.title}</h3>
+                    <h3 className="font-bold text-xl mb-3 text-gray-900">
+                      {tour.title}
+                    </h3>
 
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="flex items-center">
-                        <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                        <span className="ml-1 text-sm">{tour.rating}</span>
-                      </div>
-                      <span className="text-sm text-gray-500">
-                        ({tour.reviews} reviews)
-                      </span>
+                    <p className="text-gray-600 mb-4 line-clamp-3">
+                      {tour.description}
+                    </p>
+
+                    <div className="space-y-2 mb-6">
+                      {tour.highlights.map((highlight, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center text-sm text-gray-700"
+                        >
+                          <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
+                          {highlight}
+                        </div>
+                      ))}
                     </div>
 
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center text-sm text-gray-600">
-                        <Calendar className="h-4 w-4 mr-1" />
-                        {tour.duration}
-                      </div>
-                      <div className="text-lg font-bold text-primary">
-                        {tour.price}
-                      </div>
-                    </div>
-
-                    <Button className="w-full" asChild>
+                    <Button
+                      className="w-full bg-primary hover:bg-primary/90"
+                      asChild
+                    >
                       <Link to={`/tour/${tour.id}`}>
-                        View Details
+                        Explore Tour
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
