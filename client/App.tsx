@@ -98,15 +98,7 @@ const App = () => (
                 />
               }
             />
-            <Route
-              path="/tour/:id"
-              element={
-                <PlaceholderPage
-                  title="Tour Details"
-                  description="Detailed information about this specific tour package."
-                />
-              }
-            />
+            <Route path="/tour/:id" element={<TourDetail />} />
 
             {/* Booking */}
             <Route
