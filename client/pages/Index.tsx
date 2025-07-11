@@ -156,12 +156,13 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section with 3D Scene */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Scene3D />
-        </div>
+            <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <Hero3D variant="travel">
+          <div className="absolute inset-0 z-0">
+            <Scene3D />
+          </div>
 
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
