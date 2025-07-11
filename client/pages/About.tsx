@@ -14,6 +14,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import BookingForm from "@/components/BookingForm";
 import { Button } from "@/components/ui/button";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const About = () => {
   const stats = [
@@ -78,7 +79,10 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-blue-600 text-white py-20">
+      <AnimatedBackground
+        variant="particles"
+        className="bg-gradient-to-r from-primary to-blue-600 text-white py-20"
+      >
         <div className="max-w-6xl mx-auto px-4 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -98,7 +102,7 @@ const About = () => {
             local and international travelers.
           </motion.p>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Stats Section */}
       <section className="py-16 bg-white">
@@ -180,7 +184,7 @@ const About = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-16 bg-white">
+      <AnimatedBackground variant="dots" className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -217,7 +221,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Team Section */}
       <section className="py-16 bg-gray-50">
@@ -267,7 +271,10 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary text-white">
+      <AnimatedBackground
+        variant="geometric"
+        className="py-16 bg-primary text-white"
+      >
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -291,7 +298,7 @@ const About = () => {
             </BookingForm>
           </motion.div>
         </div>
-      </section>
+      </AnimatedBackground>
     </div>
   );
 };
