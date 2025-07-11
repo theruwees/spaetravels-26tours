@@ -243,7 +243,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="text-lg md:text-xl mb-8 drop-shadow-md max-w-2xl mx-auto"
+            className="text-xl md:text-2xl lg:text-3xl mb-12 drop-shadow-xl max-w-4xl mx-auto font-light"
           >
             Experience Sri Lanka's breathtaking landscapes, rich culture, and
             unforgettable adventures with our expert-guided tours
